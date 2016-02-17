@@ -1,1 +1,1 @@
-module.exports = require('./lib/dom-scroll-into-view');
+module.exports = require('./src/');

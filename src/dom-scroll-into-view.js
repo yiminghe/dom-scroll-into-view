@@ -1,4 +1,4 @@
-var util = require('./util');
+const util = require('./util');
 
 function scrollIntoView(elem, container, config) {
   config = config || {};
@@ -7,20 +7,27 @@ function scrollIntoView(elem, container, config) {
     container = util.getWindow(container);
   }
 
-  var allowHorizontalScroll = config.allowHorizontalScroll;
-  var onlyScrollIfNeeded = config.onlyScrollIfNeeded;
-  var alignWithTop = config.alignWithTop;
-  var alignWithLeft = config.alignWithLeft;
+  let allowHorizontalScroll = config.allowHorizontalScroll;
+  const onlyScrollIfNeeded = config.onlyScrollIfNeeded;
+  let alignWithTop = config.alignWithTop;
+  let alignWithLeft = config.alignWithLeft;
 
   allowHorizontalScroll = allowHorizontalScroll === undefined ? true : allowHorizontalScroll;
 
-  var isWin = util.isWindow(container);
-  var elemOffset = util.offset(elem);
-  var eh = util.outerHeight(elem);
-  var ew = util.outerWidth(elem);
-  var containerOffset, ch, cw, containerScroll,
-    diffTop, diffBottom, win,
-    winScroll, ww, wh;
+  const isWin = util.isWindow(container);
+  const elemOffset = util.offset(elem);
+  const eh = util.outerHeight(elem);
+  const ew = util.outerWidth(elem);
+  let containerOffset;
+  let ch;
+  let cw;
+  let containerScroll;
+  let diffTop;
+  let diffBottom;
+  let win;
+  let winScroll;
+  let ww;
+  let wh;
 
   if (isWin) {
     win = container;
@@ -28,16 +35,16 @@ function scrollIntoView(elem, container, config) {
     ww = util.width(win);
     winScroll = {
       left: util.scrollLeft(win),
-      top: util.scrollTop(win)
+      top: util.scrollTop(win),
     };
     // elem 相对 container 可视视窗的距离
     diffTop = {
       left: elemOffset.left - winScroll.left,
-      top: elemOffset.top - winScroll.top
+      top: elemOffset.top - winScroll.top,
     };
     diffBottom = {
       left: elemOffset.left + ew - (winScroll.left + ww),
-      top: elemOffset.top + eh - (winScroll.top + wh)
+      top: elemOffset.top + eh - (winScroll.top + wh),
     };
     containerScroll = winScroll;
   } else {
@@ -46,7 +53,7 @@ function scrollIntoView(elem, container, config) {
     cw = container.clientWidth;
     containerScroll = {
       left: container.scrollLeft,
-      top: container.scrollTop
+      top: container.scrollTop,
     };
     // elem 相对 container 可视视窗的距离
     // 注意边框, offset 是边框到根节点
@@ -54,7 +61,7 @@ function scrollIntoView(elem, container, config) {
       left: elemOffset.left - (containerOffset.left +
       (parseFloat(util.css(container, 'borderLeftWidth')) || 0)),
       top: elemOffset.top - (containerOffset.top +
-      (parseFloat(util.css(container, 'borderTopWidth')) || 0))
+      (parseFloat(util.css(container, 'borderTopWidth')) || 0)),
     };
     diffBottom = {
       left: elemOffset.left + ew -
@@ -62,7 +69,7 @@ function scrollIntoView(elem, container, config) {
       (parseFloat(util.css(container, 'borderRightWidth')) || 0)),
       top: elemOffset.top + eh -
       (containerOffset.top + ch +
-      (parseFloat(util.css(container, 'borderBottomWidth')) || 0))
+      (parseFloat(util.css(container, 'borderBottomWidth')) || 0)),
     };
   }
 

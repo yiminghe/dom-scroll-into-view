@@ -4,7 +4,6 @@
 scroll node in contain to make node visible
 
 [![NPM version][npm-image]][npm-url]
-[![SPM version](http://spmjs.io/badge/dom-scroll-into-view)](http://spmjs.io/package/dom-scroll-into-view)
 [![npm download][download-image]][download-url]
 
 [npm-image]: http://img.shields.io/npm/v/dom-scroll-into-view.svg?style=flat-square
@@ -31,6 +30,18 @@ scroll node in contain to make node visible
 var scrollIntoView = require('dom-scroll-into-view');
 scrollIntoView(source,container,config);
 ```
+## Development
+
+```
+npm install
+npm start
+```
+
+## Example
+
+http://localhost:8000/examples/
+
+online example: http://yiminghe.github.io/dom-scroll-into-view/
 
 ## function parameter
 
@@ -82,22 +93,6 @@ scrollIntoView(source,container,config);
         </tr>
     </tbody>
 </table>
-
-
-online docs: http://spmjs.io/docs/dom-scroll-into-view/
-
-## Development
-
-```
-npm install
-npm start
-```
-
-## Example
-
-http://localhost:8000/examples/index.md
-
-online example: http://spmjs.io/docs/dom-scroll-into-view/examples/
 
 ## License
 
