@@ -1,4 +1,4 @@
-require('./index.less');
+require('./demo.less');
 const $ = require('jquery');
 const scrollIntoView = require('dom-scroll-into-view');
 
