@@ -1,6 +1,6 @@
 {
   "name": "dom-scroll-into-view",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "scroll dom node into view automatically",
   "keywords": [
     "dom",

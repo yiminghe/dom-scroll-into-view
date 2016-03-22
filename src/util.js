@@ -332,7 +332,7 @@ function css(el, name, v) {
 
 each(['width', 'height'], (name) => {
   const first = name.charAt(0).toUpperCase() + name.slice(1);
-  domUtils[`outer${first}`] = function (el, includeMargin) {
+  domUtils[`outer${first}`] = (el, includeMargin) => {
     return el && getWHIgnoreDisplay(el, name, includeMargin ? MARGIN_INDEX : BORDER_INDEX);
   };
   const which = name === 'width' ? ['Left', 'Right'] : ['Top', 'Bottom'];

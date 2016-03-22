@@ -42,10 +42,17 @@ $('#__react-content').html(`
  <input value="0" id="offsetTop" />
 </label><br/>
 <label>
+ offsetBottom:
+ <input value="0" id="offsetBottom" />
+</label><br/>
+<label>
  offsetLeft:
  <input value="0" id="offsetLeft" />
 </label><br/>
-
+<label>
+ offsetRight:
+ <input value="0" id="offsetRight" />
+</label><br/>
 <div id="container" class="demo-container">
 <div id="ex1" class="demo-box">
 find me!
@@ -71,7 +78,9 @@ $('#scrollIntoView')[0].onclick = () => {
     alignWithTop: transformValue($('#alignWithTop').val()),
     allowHorizontalScroll: transformValue($('#allowHorizontalScroll').val()),
     onlyScrollIfNeeded: transformValue($('#onlyScrollIfNeeded').val()),
-    offsetTop: parseInt($('#offsetTop').val()) || 0,
-    offsetLeft: parseInt($('#offsetLeft').val()) || 0,
+    offsetTop: parseInt($('#offsetTop').val(), 10) || 0,
+    offsetLeft: parseInt($('#offsetLeft').val(), 10) || 0,
+    offsetBottom: parseInt($('#offsetBottom').val(), 10) || 0,
+    offsetRight: parseInt($('#offsetRight').val(), 10) || 0,
   });
 };

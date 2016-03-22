@@ -80,6 +80,30 @@ online example: http://yiminghe.github.io/dom-scroll-into-view/
           <td>whether align with top edge</td>
         </tr>
         <tr>
+          <td>config.offsetTop</td>
+          <td>Number</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>config.offsetLeft</td>
+          <td>Number</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>config.offsetBottom</td>
+          <td>Number</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>config.offsetRight</td>
+          <td>Number</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
           <td>config.allowHorizontalScroll</td>
           <td>Boolean</td>
           <td></td>
