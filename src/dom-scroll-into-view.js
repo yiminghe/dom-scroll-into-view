@@ -11,6 +11,8 @@ function scrollIntoView(elem, container, config) {
   const onlyScrollIfNeeded = config.onlyScrollIfNeeded;
   let alignWithTop = config.alignWithTop;
   let alignWithLeft = config.alignWithLeft;
+  let offsetTop = config.offsetTop || 0;
+  let offsetLeft = config.offsetLeft || 0;
 
   allowHorizontalScroll = allowHorizontalScroll === undefined ? true : allowHorizontalScroll;
 
@@ -76,24 +78,24 @@ function scrollIntoView(elem, container, config) {
   if (diffTop.top < 0 || diffBottom.top > 0) {
     // 强制向上
     if (alignWithTop === true) {
-      util.scrollTop(container, containerScroll.top + diffTop.top);
+      util.scrollTop(container, containerScroll.top + diffTop.top - offsetTop);
     } else if (alignWithTop === false) {
-      util.scrollTop(container, containerScroll.top + diffBottom.top);
+      util.scrollTop(container, containerScroll.top + diffBottom.top - offsetTop);
     } else {
       // 自动调整
       if (diffTop.top < 0) {
-        util.scrollTop(container, containerScroll.top + diffTop.top);
+        util.scrollTop(container, containerScroll.top + diffTop.top - offsetTop);
       } else {
-        util.scrollTop(container, containerScroll.top + diffBottom.top);
+        util.scrollTop(container, containerScroll.top + diffBottom.top - offsetTop);
       }
     }
   } else {
     if (!onlyScrollIfNeeded) {
       alignWithTop = alignWithTop === undefined ? true : !!alignWithTop;
       if (alignWithTop) {
-        util.scrollTop(container, containerScroll.top + diffTop.top);
+        util.scrollTop(container, containerScroll.top + diffTop.top - offsetTop);
       } else {
-        util.scrollTop(container, containerScroll.top + diffBottom.top);
+        util.scrollTop(container, containerScroll.top + diffBottom.top - offsetTop);
       }
     }
   }
@@ -102,24 +104,24 @@ function scrollIntoView(elem, container, config) {
     if (diffTop.left < 0 || diffBottom.left > 0) {
       // 强制向上
       if (alignWithLeft === true) {
-        util.scrollLeft(container, containerScroll.left + diffTop.left);
+        util.scrollLeft(container, containerScroll.left + diffTop.left - offsetLeft);
       } else if (alignWithLeft === false) {
-        util.scrollLeft(container, containerScroll.left + diffBottom.left);
+        util.scrollLeft(container, containerScroll.left + diffBottom.left - offsetLeft);
       } else {
         // 自动调整
         if (diffTop.left < 0) {
-          util.scrollLeft(container, containerScroll.left + diffTop.left);
+          util.scrollLeft(container, containerScroll.left + diffTop.left - offsetLeft);
         } else {
-          util.scrollLeft(container, containerScroll.left + diffBottom.left);
+          util.scrollLeft(container, containerScroll.left + diffBottom.left - offsetLeft);
         }
       }
     } else {
       if (!onlyScrollIfNeeded) {
         alignWithLeft = alignWithLeft === undefined ? true : !!alignWithLeft;
         if (alignWithLeft) {
-          util.scrollLeft(container, containerScroll.left + diffTop.left);
+          util.scrollLeft(container, containerScroll.left + diffTop.left - offsetLeft);
         } else {
-          util.scrollLeft(container, containerScroll.left + diffBottom.left);
+          util.scrollLeft(container, containerScroll.left + diffBottom.left - offsetLeft);
         }
       }
     }

@@ -36,7 +36,15 @@ $('#__react-content').html(`
  <option>true</option>
  <option>false</option>
  </select>
-</label>
+</label><br/>
+<label>
+ offsetTop:
+ <input value="0" id="offsetTop" />
+</label><br/>
+<label>
+ offsetLeft:
+ <input value="0" id="offsetLeft" />
+</label><br/>
 
 <div id="container" class="demo-container">
 <div id="ex1" class="demo-box">
@@ -63,5 +71,7 @@ $('#scrollIntoView')[0].onclick = () => {
     alignWithTop: transformValue($('#alignWithTop').val()),
     allowHorizontalScroll: transformValue($('#allowHorizontalScroll').val()),
     onlyScrollIfNeeded: transformValue($('#onlyScrollIfNeeded').val()),
+    offsetTop: parseInt($('#offsetTop').val()) || 0,
+    offsetLeft: parseInt($('#offsetLeft').val()) || 0,
   });
 };
