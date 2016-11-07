@@ -19,7 +19,7 @@
   "bugs": {
     "url": "http://github.com/yiminghe/dom-scroll-into-view/issues"
   },
-  "licenses": "MIT",
+  "license": "MIT",
   "config": {
     "port": 8000
   },
