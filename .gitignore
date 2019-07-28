@@ -19,7 +19,9 @@ Thumbs.db
 *.pyo
 node_modules
 .cache
-*.css
 build
-lib
 coverage
+*.map
+/pkg/
+yarn.lock
+/storybook-static/

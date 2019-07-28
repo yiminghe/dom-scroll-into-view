@@ -27,7 +27,7 @@ scroll node in contain to make node visible
 ## Usage
 
 ```js
-var scrollIntoView = require('dom-scroll-into-view');
+import scrollIntoView from 'dom-scroll-into-view';
 scrollIntoView(source,container,config);
 ```
 ## Development
