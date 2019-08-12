@@ -1,6 +1,6 @@
 {
   "name": "dom-scroll-into-view",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "scroll dom node into view automatically",
   "keywords": [
     "dom",
@@ -27,7 +27,7 @@
         }
       ],
       [
-        "@pika/plugin-build-web"
+        "pika-plugin-build-web-babel"
       ],
       [
         "@pika/plugin-build-node"
@@ -43,11 +43,11 @@
     "lint-staged": "lint-staged"
   },
   "devDependencies": {
-    "@pika/plugin-build-node": "^0.5.1",
-    "@pika/plugin-build-types": "^0.5.1",
-    "@pika/plugin-build-web": "^0.5.1",
-    "@pika/plugin-standard-pkg": "^0.5.1",
-    "@pika/types": "^0.5.1",
+    "@pika/plugin-build-node": "0.6.x",
+    "@pika/plugin-build-types": "0.6.x",
+    "pika-plugin-build-web-babel": "^0.6.0",
+    "@pika/plugin-standard-pkg": "0.6.x",
+    "@pika/types": "0.6.x",
     "@storybook/react": "^5.1.9",
     "@storybook/storybook-deployer": "^2.8.1",
     "babel-loader": "^8.0.6",
